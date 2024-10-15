@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,9 +21,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 300,
                 width: size.width * 1,
                 decoration: const BoxDecoration(
-                    
                     image: DecorationImage(
-                      fit: BoxFit.cover,
+                        fit: BoxFit.cover,
                         image: AssetImage('assets/images/bunbg.png'))),
               )),
           Positioned(
@@ -35,6 +35,92 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30))),
+                child: Padding(
+                  padding: const EdgeInsets.all(30.0),
+                  child: Column(
+                    children: [
+                      const Row(
+                        children: [
+                          Text(
+                            "Login",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: 'Email',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      TextField(
+                        decoration: InputDecoration(
+                          fillColor: Colors.white,
+                          filled: true,
+                          hintText: 'Password',
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "Forget your password?",
+                            style: TextStyle(color: Colors.white, fontSize: 15),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xffB31312)),
+                          onPressed: () {},
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(color: Colors.white),
+                          )),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      RichText(
+                          text: TextSpan(
+                              text: "I havn't an account.",
+                              style: const TextStyle(
+                                  color: Colors.white, fontSize: 15),
+                              children: [
+                            TextSpan(
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {},
+                                text: "Sign up",
+                                style: const TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold))
+                          ])),
+                    ],
+                  ),
+                ),
               )),
         ],
       ),
