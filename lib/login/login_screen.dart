@@ -1,3 +1,4 @@
+import 'package:bun_app/login/register_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -112,7 +113,13 @@ class _LoginScreenState extends State<LoginScreen> {
                               children: [
                             TextSpan(
                                 recognizer: TapGestureRecognizer()
-                                  ..onTap = () {},
+                                  ..onTap = () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RegisterScreen()));
+                                  },
                                 text: "Sign up",
                                 style: const TextStyle(
                                     color: Colors.red,
